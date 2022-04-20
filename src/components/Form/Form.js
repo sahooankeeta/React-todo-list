@@ -11,6 +11,7 @@ const TaskForm = () => {
   const [form, setForm] = useState(initialState);
 
   const dispatch = useDispatch();
+  //HANDLE FORM SUBMISSION
   const handleSubmit = (e) => {
     e.preventDefault();
     let task = form;
@@ -18,10 +19,11 @@ const TaskForm = () => {
 
     task.isComplete = false;
     setForm(task);
-    //console.log(form);
+
     dispatch(addTodo(form));
     setForm(initialState);
   };
+  //RESET TASKS LIST
   const reset = () => {
     dispatch(resetList());
   };

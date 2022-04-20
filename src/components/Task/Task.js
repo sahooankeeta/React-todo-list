@@ -8,12 +8,14 @@ import useStyles from "./style";
 const Task = ({ task }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  //MARK TASK AS COMPLETED
   const taskComplete = (taskitem) => {
     if (task.isComplete === false) {
       taskitem.isComplete = true;
       dispatch(markCompleted(taskitem));
     }
   };
+  //DELETE TASK
   const deleteTask = (id) => {
     dispatch(removeTodo(id));
   };

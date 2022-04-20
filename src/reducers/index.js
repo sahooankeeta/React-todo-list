@@ -21,7 +21,7 @@ const reducers = (state = initialState, action) => {
         incomplete: state.incomplete.filter(
           (item) => item.id !== action.payload.id
         ),
-        complete: [...state.complete, action.payload],
+        complete: [action.payload, ...state.complete],
       };
     case actionType.REMOVE:
       return {
